@@ -5,12 +5,19 @@
 }
 
 .container {
+  padding-left: 100px;
+  padding-right: 100px;
   width: 700px;
+  height: 100px;
   margin: 40vh auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 20px;
+  background-color: lightpink;
+}
+
+.incr {
 }
 
 .counters {
