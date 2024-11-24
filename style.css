@@ -17,7 +17,13 @@
   background-color: lightpink;
 }
 
-.incr {
+.incr,
+.decr {
+  padding: 3px 10px;
+  border-radius: 3px;
+  border: none;
+  color: black;
+  background-color: white;
 }
 
 .counters {
