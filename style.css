@@ -45,6 +45,6 @@ body {
 
 .counters {
   display: inline-block;
-  letter-spacing: 12px;
+  letter-spacing: 5px;
   color: white;
 }
