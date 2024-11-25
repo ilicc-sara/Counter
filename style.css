@@ -4,28 +4,47 @@
   box-sizing: border-box;
 }
 
+html {
+  font-family: sans-serif;
+}
+
+body {
+  background-color: black;
+  /* font-size: 62.5%; */
+}
+
 .container {
-  padding-left: 100px;
-  padding-right: 100px;
-  width: 700px;
+  background-color: black;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 900px;
   height: 100px;
   margin: 40vh auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  background-color: lightpink;
+  /* background-color: lightpink; */
 }
 
 .incr,
 .decr {
-  padding: 3px 10px;
+  /* padding: 3px 10px;
   border-radius: 3px;
   border: none;
   color: black;
-  background-color: white;
+  background-color: white; */
+  width: 250px;
+  height: 60px;
+  background: none;
+  border: 5px solid white;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .counters {
   display: inline-block;
+  letter-spacing: 12px;
+  color: white;
 }
