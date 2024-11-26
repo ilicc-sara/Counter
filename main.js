@@ -21,25 +21,37 @@ const counterCreator = function () {
   return { getCounter, incrCount, decrCount };
 };
 
-const counter1 = counterCreator();
 const counter2 = counterCreator();
+const counter1 = counterCreator();
 
-counter1.incrCount();
-counter1.incrCount();
-counter1.incrCount();
-counter1.incrCount();
-counter1.incrCount();
-counter1.incrCount();
-console.log("counter1:", counter1.getCounter());
-console.log("counter2:", counter2.getCounter());
+// counter1.incrCount();
+// counter1.incrCount();
+// counter1.incrCount();
+// counter1.incrCount();
+// counter1.incrCount();
 // console.log(counter.getCounter());
+
+incrBtn.addEventListener("click", function () {
+  counter1.incrCount();
+  console.log("counter1:", counter1.getCounter());
+  count1El.textContent = counter1.getCounter();
+  count2El.textContent = counter1.getCounter();
+  count3El.textContent = counter1.getCounter();
+});
+
+decrBtn.addEventListener("click", function () {
+  counter2.decrCount();
+  console.log("counter2:", counter2.getCounter());
+  count1El.textContent = counter2.getCounter();
+  count2El.textContent = counter2.getCounter();
+  count3El.textContent = counter2.getCounter();
+});
 
 /*
 
 incrBtn.addEventListener("click", function (e) {
   // incrementCount(count1, count2, count3);
   // count1++;
-  count1El.textContent = count1;
 
   // count2++;
   count2El.textContent = count2;
