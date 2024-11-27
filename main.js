@@ -8,6 +8,8 @@ const count1El = document.querySelector(".count-1");
 const count2El = document.querySelector(".count-2");
 const count3El = document.querySelector(".count-3");
 
+const btns = document.querySelectorAll(".btn");
+
 // console.log(incrBtn, decrBtn);
 // console.log(count1El, count2El, count3El);
 
@@ -21,19 +23,38 @@ const counterCreator = function () {
   return { getCounter, incrCount, decrCount };
 };
 
-const counter2 = counterCreator();
 const counter1 = counterCreator();
+const counter2 = counterCreator();
 
 // counter1.incrCount();
 // counter1.incrCount();
 // counter1.incrCount();
 // counter1.incrCount();
 // counter1.incrCount();
+// counter1.incrCount();
+console.log("counter1:", counter1.getCounter());
+console.log("counter2:", counter2.getCounter());
 // console.log(counter.getCounter());
 
+btns.forEach((btn) =>
+  btn.addEventListener("click", function (e) {
+    if (e.target.classList.contains("incr")) {
+      counter1.incrCount();
+      count1El.textContent = counter1.getCounter();
+      count2El.textContent = counter1.getCounter();
+      count3El.textContent = counter1.getCounter();
+    } else {
+      counter2.decrCount();
+      count1El.textContent = counter2.getCounter();
+      count2El.textContent = counter2.getCounter();
+      count3El.textContent = counter2.getCounter();
+    }
+  })
+);
+
+/*
 incrBtn.addEventListener("click", function () {
   counter1.incrCount();
-  console.log("counter1:", counter1.getCounter());
   count1El.textContent = counter1.getCounter();
   count2El.textContent = counter1.getCounter();
   count3El.textContent = counter1.getCounter();
@@ -41,17 +62,17 @@ incrBtn.addEventListener("click", function () {
 
 decrBtn.addEventListener("click", function () {
   counter2.decrCount();
-  console.log("counter2:", counter2.getCounter());
   count1El.textContent = counter2.getCounter();
   count2El.textContent = counter2.getCounter();
   count3El.textContent = counter2.getCounter();
 });
-
+*/
 /*
 
 incrBtn.addEventListener("click", function (e) {
   // incrementCount(count1, count2, count3);
   // count1++;
+  count1El.textContent = count1;
 
   // count2++;
   count2El.textContent = count2;
