@@ -24,17 +24,11 @@ const counterCreator = function () {
 };
 
 const counter1 = counterCreator();
-const counter2 = counterCreator();
+// const counter2 = counterCreator();
 
 // counter1.incrCount();
-// counter1.incrCount();
-// counter1.incrCount();
-// counter1.incrCount();
-// counter1.incrCount();
-// counter1.incrCount();
 console.log("counter1:", counter1.getCounter());
-console.log("counter2:", counter2.getCounter());
-// console.log(counter.getCounter());
+// console.log("counter2:", counter2.getCounter());
 
 btns.forEach((btn) =>
   btn.addEventListener("click", function (e) {
@@ -44,40 +38,27 @@ btns.forEach((btn) =>
       count2El.textContent = counter1.getCounter();
       count3El.textContent = counter1.getCounter();
     } else {
-      counter2.decrCount();
-      count1El.textContent = counter2.getCounter();
-      count2El.textContent = counter2.getCounter();
-      count3El.textContent = counter2.getCounter();
+      counter1.decrCount();
+      count1El.textContent = counter1.getCounter();
+      count2El.textContent = counter1.getCounter();
+      count3El.textContent = counter1.getCounter();
     }
   })
 );
 
 /*
-incrBtn.addEventListener("click", function () {
-  counter1.incrCount();
-  count1El.textContent = counter1.getCounter();
-  count2El.textContent = counter1.getCounter();
-  count3El.textContent = counter1.getCounter();
-});
-
-decrBtn.addEventListener("click", function () {
-  counter2.decrCount();
-  count1El.textContent = counter2.getCounter();
-  count2El.textContent = counter2.getCounter();
-  count3El.textContent = counter2.getCounter();
-});
-*/
-/*
+let count1 = 0;
+let count2 = 0;
+let count3 = 0;
 
 incrBtn.addEventListener("click", function (e) {
-  // incrementCount(count1, count2, count3);
-  // count1++;
+  count1++;
   count1El.textContent = count1;
 
-  // count2++;
+  count2++;
   count2El.textContent = count2;
 
-  // count3++;
+  count3++;
   count3El.textContent = count3;
 });
 
