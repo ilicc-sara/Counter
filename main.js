@@ -1,16 +1,11 @@
 "use strict";
 import "./style.css";
 
-const incrBtn = document.querySelector(".incr");
-const decrBtn = document.querySelector(".decr");
-
 const count1El = document.querySelector(".count-1");
 const count2El = document.querySelector(".count-2");
 const count3El = document.querySelector(".count-3");
 
 const btns = document.querySelectorAll(".btn");
-const btns1 = document.querySelectorAll(".btn-1");
-const btns2 = document.querySelectorAll(".btn-2");
 
 const counterCreator = function () {
   let count = 0;
@@ -30,25 +25,43 @@ const counter3 = counterCreator();
 // counter1.incrCount();
 console.log("counter1:", counter1.getCounter());
 
+// btns.forEach((btn) =>
+//   btn.addEventListener("click", function (e) {
+//     if (e.target.classList.contains("incr") && e.target.dataset.id === "1") {
+//       counter1.incrCount();
+//     } else if (e.target.dataset.id === "1") {
+//       counter1.decrCount();
+//     }
+
+//     if (e.target.classList.contains("incr") && e.target.dataset.id === "2") {
+//       counter2.incrCount();
+//     } else if (e.target.dataset.id === "2") {
+//       counter2.decrCount();
+//     }
+
+//     if (e.target.classList.contains("incr") && e.target.dataset.id === "3") {
+//       counter3.incrCount();
+//     } else if (e.target.dataset.id === "3") {
+//       counter3.decrCount();
+//     }
+//     count2El.textContent = counter2.getCounter();
+//     count1El.textContent = counter1.getCounter();
+//     count3El.textContent = counter3.getCounter();
+//   })
+// );
+
 btns.forEach((btn) =>
   btn.addEventListener("click", function (e) {
-    if (e.target.classList.contains("incr") && e.target.dataset.id === "1") {
-      counter1.incrCount();
-    } else if (e.target.dataset.id === "1") {
-      counter1.decrCount();
+    if (e.target.classList.contains("incr")) {
+      if (e.target.dataset.id === "1") counter1.incrCount();
+      if (e.target.dataset.id === "2") counter2.incrCount();
+      if (e.target.dataset.id === "3") counter3.incrCount();
+    } else {
+      if (e.target.dataset.id === "1") counter1.decrCount();
+      if (e.target.dataset.id === "2") counter2.decrCount();
+      if (e.target.dataset.id === "3") counter3.decrCount();
     }
 
-    if (e.target.classList.contains("incr") && e.target.dataset.id === "2") {
-      counter2.incrCount();
-    } else if (e.target.dataset.id === "2") {
-      counter2.decrCount();
-    }
-
-    if (e.target.classList.contains("incr") && e.target.dataset.id === "3") {
-      counter3.incrCount();
-    } else if (e.target.dataset.id === "3") {
-      counter3.decrCount();
-    }
     count2El.textContent = counter2.getCounter();
     count1El.textContent = counter1.getCounter();
     count3El.textContent = counter3.getCounter();
