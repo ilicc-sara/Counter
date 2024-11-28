@@ -32,33 +32,25 @@ console.log("counter1:", counter1.getCounter());
 
 btns.forEach((btn) =>
   btn.addEventListener("click", function (e) {
-    if (e.target.classList.contains("incr")) {
+    if (e.target.classList.contains("incr") && e.target.dataset.id === "1") {
       counter1.incrCount();
-    } else {
+    } else if (e.target.dataset.id === "1") {
       counter1.decrCount();
     }
-    count1El.textContent = counter1.getCounter();
-  })
-);
 
-btns1.forEach((btn) =>
-  btn.addEventListener("click", function (e) {
-    if (e.target.classList.contains("incr")) {
+    if (e.target.classList.contains("incr") && e.target.dataset.id === "2") {
       counter2.incrCount();
-    } else {
+    } else if (e.target.dataset.id === "2") {
       counter2.decrCount();
     }
-    count2El.textContent = counter2.getCounter();
-  })
-);
 
-btns2.forEach((btn) =>
-  btn.addEventListener("click", function (e) {
-    if (e.target.classList.contains("incr")) {
+    if (e.target.classList.contains("incr") && e.target.dataset.id === "3") {
       counter3.incrCount();
-    } else {
+    } else if (e.target.dataset.id === "3") {
       counter3.decrCount();
     }
+    count2El.textContent = counter2.getCounter();
+    count1El.textContent = counter1.getCounter();
     count3El.textContent = counter3.getCounter();
   })
 );
