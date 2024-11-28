@@ -9,9 +9,8 @@ const count2El = document.querySelector(".count-2");
 const count3El = document.querySelector(".count-3");
 
 const btns = document.querySelectorAll(".btn");
-
-// console.log(incrBtn, decrBtn);
-// console.log(count1El, count2El, count3El);
+const btns1 = document.querySelectorAll(".btn-1");
+const btns2 = document.querySelectorAll(".btn-2");
 
 const counterCreator = function () {
   let count = 0;
@@ -24,52 +23,42 @@ const counterCreator = function () {
 };
 
 const counter1 = counterCreator();
+const counter2 = counterCreator();
+const counter3 = counterCreator();
 // const counter2 = counterCreator();
 
 // counter1.incrCount();
 console.log("counter1:", counter1.getCounter());
-// console.log("counter2:", counter2.getCounter());
 
 btns.forEach((btn) =>
   btn.addEventListener("click", function (e) {
     if (e.target.classList.contains("incr")) {
       counter1.incrCount();
-      count1El.textContent = counter1.getCounter();
-      count2El.textContent = counter1.getCounter();
-      count3El.textContent = counter1.getCounter();
     } else {
       counter1.decrCount();
-      count1El.textContent = counter1.getCounter();
-      count2El.textContent = counter1.getCounter();
-      count3El.textContent = counter1.getCounter();
     }
+    count1El.textContent = counter1.getCounter();
   })
 );
 
-/*
-let count1 = 0;
-let count2 = 0;
-let count3 = 0;
+btns1.forEach((btn) =>
+  btn.addEventListener("click", function (e) {
+    if (e.target.classList.contains("incr")) {
+      counter2.incrCount();
+    } else {
+      counter2.decrCount();
+    }
+    count2El.textContent = counter2.getCounter();
+  })
+);
 
-incrBtn.addEventListener("click", function (e) {
-  count1++;
-  count1El.textContent = count1;
-
-  count2++;
-  count2El.textContent = count2;
-
-  count3++;
-  count3El.textContent = count3;
-});
-
-decrBtn.addEventListener("click", function (e) {
-  count1--;
-  count1El.textContent = count1;
-
-  count2--;
-  count2El.textContent = count2;
-
-  count3--;
-  count3El.textContent = count3;
-});
-*/
+btns2.forEach((btn) =>
+  btn.addEventListener("click", function (e) {
+    if (e.target.classList.contains("incr")) {
+      counter3.incrCount();
+    } else {
+      counter3.decrCount();
+    }
+    count3El.textContent = counter3.getCounter();
+  })
+);
