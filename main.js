@@ -13,42 +13,12 @@ const counterCreator = function () {
   const getCounter = () => count;
   const incrCount = () => (count += 1);
   const decrCount = () => (count -= 1);
-  // return getCounter;
   return { getCounter, incrCount, decrCount };
 };
 
 const counter1 = counterCreator();
 const counter2 = counterCreator();
 const counter3 = counterCreator();
-// const counter2 = counterCreator();
-
-// counter1.incrCount();
-console.log("counter1:", counter1.getCounter());
-
-// btns.forEach((btn) =>
-//   btn.addEventListener("click", function (e) {
-//     if (e.target.classList.contains("incr") && e.target.dataset.id === "1") {
-//       counter1.incrCount();
-//     } else if (e.target.dataset.id === "1") {
-//       counter1.decrCount();
-//     }
-
-//     if (e.target.classList.contains("incr") && e.target.dataset.id === "2") {
-//       counter2.incrCount();
-//     } else if (e.target.dataset.id === "2") {
-//       counter2.decrCount();
-//     }
-
-//     if (e.target.classList.contains("incr") && e.target.dataset.id === "3") {
-//       counter3.incrCount();
-//     } else if (e.target.dataset.id === "3") {
-//       counter3.decrCount();
-//     }
-//     count2El.textContent = counter2.getCounter();
-//     count1El.textContent = counter1.getCounter();
-//     count3El.textContent = counter3.getCounter();
-//   })
-// );
 
 btns.forEach((btn) =>
   btn.addEventListener("click", function (e) {
@@ -62,8 +32,8 @@ btns.forEach((btn) =>
       if (e.target.dataset.id === "3") counter3.decrCount();
     }
 
-    count2El.textContent = counter2.getCounter();
     count1El.textContent = counter1.getCounter();
+    count2El.textContent = counter2.getCounter();
     count3El.textContent = counter3.getCounter();
   })
 );
